@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(example_c)
+
+set(CMAKE_CXX_STANDARD 17)
+
+include_directories(${PROJECT_SOURCE_DIR}/SFML/include)
+
+link_directories(${PROJECT_SOURCE_DIR}/SFML/lib)
+
+add_executable(
+    game 
+    main.cpp
+    Player.cpp
+    Bullet.cpp
+)   
+
+target_link_libraries(game 
+    SFML-graphics
+    SFML-window 
+    SFML-system
+)
